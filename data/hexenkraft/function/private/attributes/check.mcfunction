@@ -1,6 +1,5 @@
 advancement revoke @s only hexenkraft:update_inventory
 
-scoreboard players set @s hexenkraft.mana.overflow 0
 scoreboard players set @s hexenkraft.mana.regen 0
 
 function hexenkraft:private/attributes/overflow/check
