@@ -23,7 +23,7 @@ scoreboard objectives add hexenkraft.air air
 
 function hexenkraft:private/1s
 
-tellraw @a ["",{color:"yellow",text:"["},{color:"#CB81FF",text:"Hexenkraft Library"},{color:"yellow",text:"]"}," Reloaded! If you're reading this, you're probably me and this pack is unreleased so i'm not going to link you to the modrinth page, loser"]
+tellraw @a ["",{color:"yellow",text:"["},{color:"#CB81FF",text:"Hexenkraft Library"},{color:"yellow",text:"]"}," Reloaded!"]
 
 
 
