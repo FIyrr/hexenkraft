@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:any_of",
+  "terms": [
+    {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:equipment":{"head":{"components":{"minecraft:custom_data":{"hexenkraft":{"attributes":{"armor":true,"overflow":true}}}}}}}},
+    {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:equipment":{"chest":{"components":{"minecraft:custom_data":{"hexenkraft":{"attributes":{"armor":true,"overflow":true}}}}}}}},
+    {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:equipment":{"legs":{"components":{"minecraft:custom_data":{"hexenkraft":{"attributes":{"armor":true,"overflow":true}}}}}}}},
+    {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:equipment":{"feet":{"components":{"minecraft:custom_data":{"hexenkraft":{"attributes":{"armor":true,"overflow":true}}}}}}}},
+    {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:equipment":{"mainhand":{"components":{"minecraft:custom_data":{"hexenkraft":{"attributes":{"mainhand":true,"overflow":true}}}}}}}},
+    {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:equipment":{"offhand":{"components":{"minecraft:custom_data":{"hexenkraft":{"attributes":{"offhand":true,"overflow":true}}}}}}}}
+  ]
+}

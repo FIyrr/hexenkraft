@@ -1,0 +1,11 @@
+{
+    "id": "hexenkraft",
+    "pack":{
+        "pack_format": 101,
+        "max_format": 121,
+        "min_format": 101,
+        "description":[
+            {"font":"hexenkraft:mana","text":"\"Hexenkraft\" mana library by Flyrr","color":"#ff8dfb", "font":"hexenkraft:mana"}
+        ]
+    }
+}

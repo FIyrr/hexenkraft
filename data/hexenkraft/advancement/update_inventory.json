@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "update inventory": {
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "rewards": {
+    "function": "hexenkraft:private/attributes/check"
+  }
+}
