@@ -19,6 +19,10 @@ scoreboard players set %10 hexenkraft.const 10
 
 scoreboard objectives add hexenkraft.temp dummy
 
+scoreboard objectives add hexenkraft.util dummy
+scoreboard players set %installed hexenkraft.util 777
+
+
 scoreboard objectives add hexenkraft.air air
 
 function hexenkraft:private/1s
