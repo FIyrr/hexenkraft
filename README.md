@@ -15,7 +15,11 @@ Each point of overflow mana allows the player to store one mana above what would
 
 <details>
 <summary>Interacting with the library</summary>
-  
+
+### Making sure the player installs the library
+As proven by plenty of evidence, some players simply don't read the pack descriptions before downloading a new pack.
+To inform those that they need to install the library, please include `execute unless score %installed hexenkraft.util matches 777 run tellraw @a ["",{color:"yellow",text:"["},{color:"#CB81FF",text:"Hexenkraft Library"},{color:"yellow",text:"] "},{color:"red",text:"One of the datapacks you're using requires the "},{color:"#CB81FF",text:"Hexenkraft Mana Library "},{color:"red",text:"to function"},". ",{color:"gray",text:"["},{color:"#AFFFAC",text:"Download",click_event:{action:"open_url",url:"https://modrinth.com/datapack/hexenkraft"},hover_event:{action:"show_text",value:["",{text:"Click to download on Modrinth!"}]}},{color:"gray",text:"]"}]` in your `load` function. Feel free to modify the text to your liking but make sure to include a direct download link in the message.
+
 ### Abilities/Items that use mana:
 To deplete use a set amount of mana run:
 `function hexenkraft:_public/mana/use {amount:<AMOUNT>}` (e.g. with `execute store result`)
@@ -33,7 +37,6 @@ To allow for any item to increase mana regen or overflow, simply add the followi
 `<AMOUNT>`: The amount of additional mana to regenerate per second/of overflow mana to be freed. Can be any integer, though overflow mana can not be negative.
 
 ### Reading mana values
-
 All mana values are stored in scoreboards:
 
 `hexenkraft.mana.amount` -> Current amount of stored mana
@@ -44,14 +47,22 @@ All mana values are stored in scoreboards:
 
 `hexenkraft.mana.regen` -> Amount of mana to be regenerated / second
 
+`hexenkraft.mana.amount_used` -> Stores the last amount of mana the player used/tried to use.
+
 **PLEASE** do NOT ever directly modify these scoreboards, as doing so can break core functions of the library or compatibility with other packs. If you feel the need to change any of these and find no native way to do so using the library, please request for such function either via github issues or in the linked discord server!
 
 If you for some reason want to get the current mana percentage of a player simply run:
 `function hexenkraft:_public/get/mana_percentage`
 And then read from scoreboard `hexenkraft.mana.percentage`
 
-### Utility functions
+### "Event handlers" / Function tags
+If you want your pack to respond to certain events, you can add functions to certain tags and they will be called when the event happens. All of these are run `as` the player, `at` the player.
 
+`hexenkraft:call_on_mana_use_attempt` -> called whenever a player attempts to use mana, no matter the success
+`hexenkraft:call_on_mana_use_fail` -> called whenever a player attempts to use mana and fails (e.g. because they do not have enough)
+`hexenkraft:call_on_mana_use_success` -> called whenever a player attempts to use mana and succeeds
+
+### Utility functions
 These functions can be run during development but are not supposed to be used in packs. 
 
 `/function hexenkraft:_public/mana/add {amount:<AMOUNT>}` -> increases the players mana by a set amount
@@ -70,6 +81,7 @@ These functions can be run during development but are not supposed to be used in
   
 - Though internally, the can hold up to 1000/2000 mana, it is recommended to communicate it as 100/200 to the player. E.g. 5 mana points -> 0.5 mana, 500 -> 50 mana, etc.
 - Don't run any functions not in the `_public` folder :P
+- When adding mana regeneration modifiers, always think about how fast it would take the player to reach the maximum of 2000 mana, which is the most a spell can cost. Also, consider that other packs might add additional ways to increase regeneration on top of yours, which can quickly become overpowered. In general, try to keep values relatively low. Normally, mana regenerates at 5/s, if you even just add another 5 to that, you have already doubled the speed.
 - More recommendations to be added soon™️
 </details>
 
