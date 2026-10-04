@@ -38,11 +38,11 @@ To allow for any item to increase mana regen or overflow, simply add the followi
 ### Grating additional mana regen / overflow without items
 To increase any players mana regen / overflow stats, run `function hexenkraft:_public/attribute/add_modifier {type:<MODIFIER TYPE>,duration:<DURATION>,amount:<AMOUNT>,id:<ID>` as the player
 
-`<MODIFIER TYPE>`: The type of the modifier. Can be any or all of: `overflow`, `regen`
+`<MODIFIER TYPE>`: The type of the modifier. Can be either `overflow`, `regen`
 
 `<AMOUNT>`: The amount of regen/overflow added to the player
 
-`<DURATION>`: The duration of how long these modifiers last. Set to -1 if you don't want them to run out.
+`<DURATION>`: The duration of how long these modifiers last in ticks. Set to -1 if you don't want them to run out.
 
 `<ID>`: Unique ID for the modifier. E.g. `namespace:mana_potion`, `namespace:bossfight_modifier`, etc.
 
