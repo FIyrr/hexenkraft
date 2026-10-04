@@ -11,6 +11,7 @@ execute if items entity @s weapon.mainhand *[minecraft:custom_data~{hexenkraft:{
 execute if items entity @s weapon.offhand *[minecraft:custom_data~{hexenkraft:{attributes:{regen:1b,offhand:1b}}}] store result score %offhand hexenkraft.temp run data get entity @s equipment.offhand.components."minecraft:custom_data".hexenkraft.attributes.regen_amount
 
 scoreboard players operation @s hexenkraft.mana.regen = %mana.regen hexenkraft.default
+scoreboard players operation @s hexenkraft.mana.regen += @s hexenkraft.mana.regen.modifier
 scoreboard players operation @s hexenkraft.mana.regen += %head hexenkraft.temp
 scoreboard players operation @s hexenkraft.mana.regen += %chest hexenkraft.temp
 scoreboard players operation @s hexenkraft.mana.regen += %legs hexenkraft.temp

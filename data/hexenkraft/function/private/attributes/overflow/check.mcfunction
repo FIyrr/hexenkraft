@@ -12,6 +12,7 @@ execute if items entity @s weapon.offhand *[minecraft:custom_data~{hexenkraft:{a
 
 scoreboard players set @s hexenkraft.mana.overflow 0
 
+scoreboard players operation @s hexenkraft.mana.overflow += @s hexenkraft.mana.overflow.modifier
 scoreboard players operation @s hexenkraft.mana.overflow += %head hexenkraft.temp
 scoreboard players operation @s hexenkraft.mana.overflow += %chest hexenkraft.temp
 scoreboard players operation @s hexenkraft.mana.overflow += %legs hexenkraft.temp

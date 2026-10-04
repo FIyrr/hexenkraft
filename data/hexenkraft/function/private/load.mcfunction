@@ -6,6 +6,9 @@ scoreboard objectives add hexenkraft.mana.percentage dummy
 scoreboard objectives add hexenkraft.mana.amount_used dummy
 scoreboard objectives add hexenkraft.mana.display_requirement dummy
 
+scoreboard objectives add hexenkraft.mana.regen.modifier dummy
+scoreboard objectives add hexenkraft.mana.overflow.modifier dummy
+
 scoreboard objectives add hexenkraft.selected_slot dummy
 scoreboard objectives add hexenkraft.selected_slot.old dummy
 
@@ -22,8 +25,12 @@ scoreboard objectives add hexenkraft.temp dummy
 scoreboard objectives add hexenkraft.util dummy
 scoreboard players set %installed hexenkraft.util 777
 
+scoreboard objectives add hexenkraft.id dummy
+scoreboard players set %max hexenkraft.id 0
 
 scoreboard objectives add hexenkraft.air air
+
+data merge storage hexenkraft:atributes {}
 
 function hexenkraft:private/1s
 

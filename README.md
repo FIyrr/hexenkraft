@@ -25,7 +25,6 @@ To deplete use a set amount of mana run:
 `function hexenkraft:_public/mana/use {amount:<AMOUNT>}` (e.g. with `execute store result`)
 This will only use mana if the player has enough, in which case the function will return `1`, if the player does **not** have enough mana, the function will return `-1` and give audible feedback to the player. In the future, this will also be communicated by animating the mana bar.
 
-  
 ### Items that grant additional mana regen / overflow
 To allow for any item to increase mana regen or overflow, simply add the following to the items `"minecraft:custom_data"` component:
 `{hexenkraft:{attributes:{<SLOT TYPE>:true,<MODIFIER TYPE>:true,<MODIFIER TYPE>_amount:<AMOUNT>}}}`
@@ -35,6 +34,21 @@ To allow for any item to increase mana regen or overflow, simply add the followi
 `<MODIFIER TYPE>`: The type of the modifier. Can be any or all of: `overflow`, `regen`
 
 `<AMOUNT>`: The amount of additional mana to regenerate per second/of overflow mana to be freed. Can be any integer, though overflow mana can not be negative.
+
+### Grating additional mana regen / overflow without items
+To increase any players mana regen / overflow stats, run `function hexenkraft:_public/attribute/add_modifier {type:<MODIFIER TYPE>,duration:<DURATION>,amount:<AMOUNT>,id:<ID>` as the player
+
+`<MODIFIER TYPE>`: The type of the modifier. Can be any or all of: `overflow`, `regen`
+
+`<AMOUNT>`: The amount of regen/overflow added to the player
+
+`<DURATION>`: The duration of how long these modifiers last. Set to -1 if you don't want them to run out.
+
+`<ID>`: Unique ID for the modifier. E.g. `namespace:mana_potion`, `namespace:bossfight_modifier`, etc.
+
+You can remove existing modifiers before they run out using `function hexenkraft:_public/attribute/remove_modifier {id:<ID>}`
+Trying to add multiple modifiers with the same ID to a player will cause the new modifier to be overwritten by the old one
+
 
 ### Reading mana values
 All mana values are stored in scoreboards:

@@ -22,6 +22,9 @@ execute if score @s hexenkraft.mana.amount >= @s hexenkraft.mana.max run scorebo
 
 function hexenkraft:private/attributes/main
 
+function hexenkraft:private/attributes/non_item_modifiers/check/1
+
+
 # precautions for incompetent developers
 execute if score @s hexenkraft.mana.amount matches ..-1 run scoreboard players set @s hexenkraft.mana.amount 0
 execute if score @s hexenkraft.mana.overflow matches ..-1 run scoreboard players set @s hexenkraft.mana.overflow 0 
@@ -34,7 +37,5 @@ execute store result score @s hexenkraft.selected_slot run data get entity @s Se
 execute unless score @s[tag=!hexenkraft.checked_inventory] hexenkraft.selected_slot = @s hexenkraft.selected_slot.old run function hexenkraft:private/attributes/check
 
 execute store result score @s hexenkraft.selected_slot.old run data get entity @s SelectedItemSlot
-
-#
 
 tag @s remove hexenkraft.checked_inventory
