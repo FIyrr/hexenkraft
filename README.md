@@ -47,7 +47,7 @@ To increase any players mana regen / overflow stats, run `function hexenkraft:_p
 `<ID>`: Unique ID for the modifier. E.g. `namespace:mana_potion`, `namespace:bossfight_modifier`, etc.
 
 You can remove existing modifiers before they run out using `function hexenkraft:_public/attribute/remove_modifier {id:<ID>}`
-Trying to add multiple modifiers with the same ID to a player will cause the new modifier to be overwritten by the old one
+Trying to add multiple modifiers with the same ID to a player will cause the old modifier to be overwritten by the new one
 
 
 ### Reading mana values
