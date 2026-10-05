@@ -77,7 +77,7 @@ If you want your pack to respond to certain events, you can add functions to cer
 `hexenkraft:call_on_mana_use_success` -> called whenever a player attempts to use mana and succeeds
 
 ### Utility functions
-These functions can be run during development but are not supposed to be used in packs. 
+Other functions to interact with a player's mana. 
 
 `/function hexenkraft:_public/mana/add {amount:<AMOUNT>}` -> increases the players mana by a set amount
 
@@ -88,6 +88,9 @@ These functions can be run during development but are not supposed to be used in
 `/function hexenkraft:_public/mana/no_overflow` -> completely fills up the players mana, excluding overflow
 
 `/function hexenkraft:_public/mana/set {amount:<AMOUNT>}` -> sets the players mana to a specific amount
+
+`/function hexenkraft:_public/mana/remove {amount:<AMOUNT>}` -> removes a specific amount of mana from the player. DO NOT use this for spells and things of the like which are only supposed to work if the player has a specific amount of mana. For that see **Abilities/Items that use mana** above.
+
 </details>
 
 <details>

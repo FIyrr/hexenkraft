@@ -1,3 +1,5 @@
 {
-    "values":["hexenkraft:private/tick"] 
+    "values":[
+        "hexenkraft:private/tick"
+    ] 
 }
