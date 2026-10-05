@@ -19,6 +19,7 @@ scoreboard objectives add hexenkraft.const dummy
 scoreboard players set %1000 hexenkraft.const 1000
 scoreboard players set %100 hexenkraft.const 100
 scoreboard players set %10 hexenkraft.const 10
+scoreboard players set %-1 hexenkraft.const -1
 
 scoreboard objectives add hexenkraft.temp dummy
 
@@ -29,6 +30,8 @@ scoreboard objectives add hexenkraft.id dummy
 scoreboard players set %max hexenkraft.id 0
 
 scoreboard objectives add hexenkraft.air air
+
+scoreboard objectives add hexenkraft.settings.toggle_sounds trigger
 
 data merge storage hexenkraft:atributes {}
 

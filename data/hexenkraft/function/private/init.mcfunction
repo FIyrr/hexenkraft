@@ -8,3 +8,4 @@ scoreboard players operation @s hexenkraft.mana.regen = %mana.regen hexenkraft.d
 scoreboard players operation @s hexenkraft.id = %max hexenkraft.id
 scoreboard players add @s hexenkraft.id 1
 scoreboard players add %max hexenkraft.id 1
+

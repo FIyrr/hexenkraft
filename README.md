@@ -23,7 +23,7 @@ To inform those that they need to install the library, please include `execute u
 ### Abilities/Items that use mana:
 To deplete use a set amount of mana run:
 `function hexenkraft:_public/mana/use {amount:<AMOUNT>}` (e.g. with `execute store result`)
-This will only use mana if the player has enough, in which case the function will return `1`, if the player does **not** have enough mana, the function will return `-1` and give audible feedback to the player. In the future, this will also be communicated by animating the mana bar.
+This will only use mana if the player has enough, in which case the function will return `1`, if the player does **not** have enough mana, the function will return `-1` and give audible feedback to the player. Additionally, the amount of mana needed, will be displayed on the players mana bar!
 
 ### Items that grant additional mana regen / overflow
 To allow for any item to increase mana regen or overflow, simply add the following to the items `"minecraft:custom_data"` component:
@@ -93,6 +93,27 @@ Other functions to interact with a player's mana.
 
 </details>
 
+
+<details>
+<summary>Developer settings</summary>
+These settings require op permissions and might help out when developing your pack.
+
+`/function hexenkraft:_public/z_debug/toggle_debug_bar` - Toggles the debug bar, an alternate mana bar numerically displaying current mana, max mana, overflow & regeneration. Shows up in all gamemodes and replaces all actionbar text.
+
+`/function hexenkraft:_public/z_debug/toggle_debug_messages` - Toggles debug messages. Debug messages with extra information are for example sent whenever attribute modifiers are applied to/removed from a player. More debug messages might be added in the future.
+
+</details>
+
+
+<details>
+<summary>Settings for users</summary>
+  
+- Any player can disable the sound that is played when they don't have enough mana to perform an action using: `/trigger hexenkraft.settings.toggle_sounds`
+Running the command again will re-enable sounds.
+
+</details>
+
+
 <details>
 <summary>Recommendations for developers</summary>
   
@@ -106,9 +127,6 @@ Other functions to interact with a player's mana.
 <details>
 <summary>Planned features</summary>
 
-  - A textured mana bar in line with all of the vanilla attribute bars (e.g. health & armor), automatically which reacts to mana usage and shows the amount of mana needed in case the player does not already have enough
-  - The ability for packs to artificially regnerate set amounts of mana
-  - Being able to temporarily increase mana regen or overflow independently of item attributes
   - Further optimisation of the pack
   - Whatever the people long for :)
  
