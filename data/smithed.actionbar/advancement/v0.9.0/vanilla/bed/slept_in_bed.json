@@ -1,0 +1,59 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:slept_in_bed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:location": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.major"
+                },
+                "score": "load.status"
+              },
+              "test": 0
+            },
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.minor"
+                },
+                "score": "load.status"
+              },
+              "test": 9
+            },
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.patch"
+                },
+                "score": "load.status"
+              },
+              "test": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

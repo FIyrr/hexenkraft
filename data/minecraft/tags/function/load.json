@@ -1,3 +1,6 @@
 {
-    "values":["hexenkraft:private/load"] 
+    "values":[
+        "hexenkraft:private/load",    
+        "#load:_private/load"
+] 
 }

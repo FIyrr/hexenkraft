@@ -1,5 +1,3 @@
-# unused function 
-
 execute if score @s hexenkraft.mana.amount_used matches 1..50 run data modify storage hexenkraft:mana indicator set value ",{'atlas':'minecraft:gui','sprite':'hexenkraft:mana_point_pulsating'}"
 execute if score @s hexenkraft.mana.amount_used matches 50..100 run data modify storage hexenkraft:mana indicator set value ",{'text':'\uF802N'}"
 execute if score @s hexenkraft.mana.amount_used matches 101..150 run data modify storage hexenkraft:mana indicator set value ",{'text':'9\uF802\uF802I\uF801\uF801N'}"

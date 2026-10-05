@@ -1,6 +1,3 @@
-# unused function 
-
-
 $execute if score @s hexenkraft.mana.amount matches 0..40 run data modify storage smithed.actionbar:input message set value {json: [{'text':'999aaaaaaaE\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E', 'font':'hexenkraft:mana','shadow_color':16733695}$(indicator)], priority: 'persistent', freeze:0}
 $execute if score @s hexenkraft.mana.amount matches 50..90 run data modify storage smithed.actionbar:input message set value {json: [{'text':'999aaaaaaaE\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801H', 'font':'hexenkraft:mana','shadow_color':16733695}$(indicator)], priority: 'persistent', freeze:0}
 $execute if score @s hexenkraft.mana.amount matches 100..140 run data modify storage smithed.actionbar:input message set value {json: [{'text':'999aaaaaaaE\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801E\uF801\uF801F', 'font':'hexenkraft:mana','shadow_color':16733695}$(indicator)], priority: 'persistent', freeze:0}

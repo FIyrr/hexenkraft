@@ -1,0 +1,129 @@
+{
+  "criteria": {
+    "click_no_sneak": {
+      "trigger": "minecraft:any_block_use",
+      "conditions": {
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:int_value_check",
+                "value": {
+                  "type": "minecraft:score",
+                  "target": "this",
+                  "score": "smithed.actionbar.sneaking"
+                },
+                "test": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.major"
+                },
+                "score": "load.status"
+              },
+              "test": 0
+            },
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.minor"
+                },
+                "score": "load.status"
+              },
+              "test": 9
+            },
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.patch"
+                },
+                "score": "load.status"
+              },
+              "test": 0
+            }
+          ]
+        },
+        "location": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": "#smithed.actionbar:v0.9.0/lockable"
+            }
+          }
+        }
+      }
+    },
+    "click_empty": {
+      "trigger": "minecraft:default_block_use",
+      "conditions": {
+        "location": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": "#smithed.actionbar:v0.9.0/lockable"
+            }
+          }
+        },
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.major"
+                },
+                "score": "load.status"
+              },
+              "test": 0
+            },
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.minor"
+                },
+                "score": "load.status"
+              },
+              "test": 9
+            },
+            {
+              "type": "minecraft:int_value_check",
+              "value": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "#smithed.actionbar.patch"
+                },
+                "score": "load.status"
+              },
+              "test": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "smithed.actionbar:v0.9.0/vanilla/container/clicked_lockable_block"
+  }
+}

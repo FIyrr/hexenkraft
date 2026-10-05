@@ -1,0 +1,1 @@
+$scoreboard players remove @s hexenkraft.mana.amount $(amount)
