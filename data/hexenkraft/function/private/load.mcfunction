@@ -39,6 +39,7 @@ scoreboard objectives add hexenkraft.settings.toggle_sounds trigger
 
 
 data merge storage hexenkraft:atributes {}
+data merge storage hexenkraft:mana {indicator:""}
 
 function hexenkraft:private/1s
 
