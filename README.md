@@ -1,7 +1,7 @@
 **AT THIS POINT IN TIME, THE LIBRARY REQUIRES AN ADDITIONAL RESOURCEPACK. FEEL FREE TO MERGE THE RP WITH YOUR OWN USING WELD, OR TELL USERS TO DOWNLOAD IT FROM HERE OR MODRINTH**
 **LINK: https://github.com/FIyrr/hexenkraft-resources**
 
-This datapack library aims to establish a standardised mana/magic system multiple packs can use without breaking each other or getting confusing for the user.
+This datapack library aims to establish a standardised mana/magic system multiple packs can use without breaking each other or getting confusing for the user. 
 
 <details>
 <summary>Basic functionality</summary>
@@ -13,13 +13,20 @@ Through armor pieces, potions or other sources it's possible to not only **incre
 Each point of overflow mana allows the player to store one mana above what would usually be the maximum of 1000, **allowing for up to 2000 mana to be stored**.
 </details>
 
+<summary>Setup</summary>
+  
+Please **do not** merge this pack with your own datapacks requiring the pack. Instead, link players to the Modrinth page/this GitHub repo where they can download this pack to use alongside yours. This way, you won't need to update your pack everytime the library gets updated. If you're uploading your pack to Modrinth, best practice is to list this pack as a dependency. You are, however, allowed to merge the resource pack for ease of use, as well as change textures to your liking. Note that when the player uses different resourcepacks modifying these textures, the resource pack highest in the list will override the lower ones. 
 
-<details>
-<summary>Interacting with the library</summary>
+**DO NOT** use the textures provided by the resource pack for packs not also using the library and without giving credit.
 
 ### Making sure the player installs the library
 As proven by plenty of evidence, some players simply don't read the pack descriptions before downloading a new pack.
 To inform those that they need to install the library, please include `execute unless score %installed hexenkraft.util matches 777 run tellraw @a ["",{color:"yellow",text:"["},{color:"#CB81FF",text:"Hexenkraft Library"},{color:"yellow",text:"] "},{color:"red",text:"One of the datapacks you're using requires the "},{color:"#CB81FF",text:"Hexenkraft Mana Library "},{color:"red",text:"to function"},". ",{color:"gray",text:"["},{color:"#AFFFAC",text:"Download",click_event:{action:"open_url",url:"https://modrinth.com/datapack/hexenkraft"},hover_event:{action:"show_text",value:["",{text:"Click to download on Modrinth!"}]}},{color:"gray",text:"]"}]` in your `load` function. Feel free to modify the text to your liking but make sure to include a direct download link in the message.
+
+</details>
+
+<details>
+<summary>Interacting with the library</summary>
 
 ### Abilities/Items that use mana:
 To use a set amount of mana run:
