@@ -13,6 +13,7 @@ Through armor pieces, potions or other sources it's possible to not only **incre
 Each point of overflow mana allows the player to store one mana above what would usually be the maximum of 1000, **allowing for up to 2000 mana to be stored**.
 </details>
 
+<details>
 <summary>Setup</summary>
   
 Please **do not** merge this pack with your own datapacks requiring the pack. Instead, link players to the Modrinth page/this GitHub repo where they can download this pack to use alongside yours. This way, you won't need to update your pack everytime the library gets updated. If you're uploading your pack to Modrinth, best practice is to list this pack as a dependency. You are, however, allowed to merge the resource pack for ease of use, as well as change textures to your liking. Note that when the player uses different resourcepacks modifying these textures, the resource pack highest in the list will override the lower ones. 
