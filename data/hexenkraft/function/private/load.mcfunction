@@ -37,6 +37,7 @@ scoreboard objectives add hexenkraft.death deathCount
 
 scoreboard objectives add hexenkraft.settings.toggle_sounds trigger
 
+execute as @a unless score @s hexenkraft.id matches 0.. run function hexenkraft:private/init
 
 data merge storage hexenkraft:atributes {}
 data merge storage hexenkraft:mana {indicator:""}
