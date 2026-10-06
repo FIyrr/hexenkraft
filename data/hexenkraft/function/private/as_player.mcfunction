@@ -11,12 +11,12 @@ execute if entity @s[tag=hexenkraft.debug.bar] run title @s[tag=!hexenkraft.hide
 scoreboard players operation @s hexenkraft.mana.max = %1000 hexenkraft.const
 scoreboard players operation @s hexenkraft.mana.max += @s hexenkraft.mana.overflow
 
-execute if score @s hexenkraft.mana.amount >= @s hexenkraft.mana.max run scoreboard players operation @s hexenkraft.mana.amount = @s hexenkraft.mana.max
 
 function hexenkraft:private/attributes/main
 
 function hexenkraft:private/attributes/non_item_modifiers/check/1
 
+execute if score @s hexenkraft.mana.amount >= @s hexenkraft.mana.max run scoreboard players operation @s hexenkraft.mana.amount = @s hexenkraft.mana.max
 
 # precautions for incompetent developers
 execute if score @s hexenkraft.mana.amount matches ..-1 run scoreboard players set @s hexenkraft.mana.amount 0

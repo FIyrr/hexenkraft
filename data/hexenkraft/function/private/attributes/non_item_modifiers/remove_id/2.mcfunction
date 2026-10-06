@@ -6,8 +6,8 @@ $scoreboard players set %amount hexenkraft.temp $(amount)
 execute if score %amount hexenkraft.temp matches 0.. run scoreboard players set %positive hexenkraft.temp 1
 execute unless score %positive hexenkraft.temp matches 1 run scoreboard players operation %amount hexenkraft.temp *= %-1 hexenkraft.const
 
-execute if data storage hexenkraft:temp {type:"regen"} if score %positive hexenkraft.temp matches 1 run return run scoreboard players operation @s hexenkraft.mana.regen.modifier -= %amount hexenkraft.temp
-execute if data storage hexenkraft:temp {type:"overflow"} if score %positive hexenkraft.temp matches 1 run return run scoreboard players operation @s hexenkraft.mana.overflow.modifier -= %amount hexenkraft.temp
+execute if data storage hexenkraft:temp modifier{type:"regen"} if score %positive hexenkraft.temp matches 1 run return run scoreboard players operation @s hexenkraft.mana.regen.modifier -= %amount hexenkraft.temp
+execute if data storage hexenkraft:temp modifier{type:"overflow"} if score %positive hexenkraft.temp matches 1 run return run scoreboard players operation @s hexenkraft.mana.overflow.modifier -= %amount hexenkraft.temp
 
-execute if data storage hexenkraft:temp {type:"regen"} run return run scoreboard players operation @s hexenkraft.mana.regen.modifier += %amount hexenkraft.temp
-execute if data storage hexenkraft:temp {type:"overflow"} run return run scoreboard players operation @s hexenkraft.mana.overflow.modifier += %amount hexenkraft.temp
+execute if data storage hexenkraft:temp modifier{type:"regen"} run return run scoreboard players operation @s hexenkraft.mana.regen.modifier += %amount hexenkraft.temp
+execute if data storage hexenkraft:temp modifier{type:"overflow"} run return run scoreboard players operation @s hexenkraft.mana.overflow.modifier += %amount hexenkraft.temp
