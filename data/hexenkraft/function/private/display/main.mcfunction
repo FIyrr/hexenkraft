@@ -1,5 +1,4 @@
-execute if score @s hexenkraft.mana.display_requirement matches 2.. if score @s hexenkraft.air matches 300 run function hexenkraft:private/display/need_mana/normal
-execute if score @s hexenkraft.mana.display_requirement matches 2.. unless score @s hexenkraft.air matches 300 run function hexenkraft:private/display/need_mana/water
+execute if score @s hexenkraft.mana.display_requirement matches 2.. run function hexenkraft:private/display/need_mana/main
 
 
 scoreboard players remove @s[scores={hexenkraft.mana.display_requirement=1..}] hexenkraft.mana.display_requirement 1

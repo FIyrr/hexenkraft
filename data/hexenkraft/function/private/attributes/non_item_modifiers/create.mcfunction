@@ -1,7 +1,7 @@
 scoreboard players set %positive hexenkraft.temp 0
 
 $execute if data storage hexenkraft:attributes $(player_id)[{id:"$(id)"}] run function hexenkraft:_public/attribute/remove_modifier {id:"$(id)"}
-$data modify storage hexenkraft:attributes $(player_id) append value {type:$(type),id:"$(id)",duration:$(duration),amount:$(amount)}
+$data modify storage hexenkraft:attributes $(player_id) append value {type:$(type),id:"$(id)",duration:$(duration),amount:$(amount),persistent:$(persistent)}
 
 $tellraw @a[tag=hexenkraft.debug] ["",{color:"yellow",text:"["},{color:"red",text:"HEXENKRAFT DEBUG"},{color:"yellow",text:"] "},{color:"white",text:"Applied attribute modifier "},{color:"yellow",text:"\"$(id)\""},{"text":" to player "}, {color:"#ffb66e",selector:"@s"},{"text":": "},{color:"#6EFFEC",nbt:"$(player_id)[{id:\"$(id)\"}]",storage:"hexenkraft:attributes"}]
 

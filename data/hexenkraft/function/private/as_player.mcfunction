@@ -33,6 +33,14 @@ execute store result score @s hexenkraft.selected_slot.old run data get entity @
 
 tag @s remove hexenkraft.checked_inventory
 
+# check gamemode change
+execute if entity @s[gamemode=!adventure,gamemode=!survival] run scoreboard players add @s hexenkraft.gamemode_timer 1
+execute if score @s hexenkraft.gamemode_timer matches 1 run function hexenkraft:private/switch_gamemode
+execute if entity @s[gamemode=!creative,gamemode=!spectator] run scoreboard players set @s hexenkraft.gamemode_timer 0
+
+#detect death
+execute if score @s hexenkraft.death matches 1 run function hexenkraft:private/death
+
 ## triggers
 
 execute if entity @s[scores={hexenkraft.settings.toggle_sounds=2..}] run scoreboard players set @s hexenkraft.settings.toggle_sounds 0

@@ -12,6 +12,8 @@ scoreboard objectives add hexenkraft.mana.overflow.modifier dummy
 scoreboard objectives add hexenkraft.selected_slot dummy
 scoreboard objectives add hexenkraft.selected_slot.old dummy
 
+scoreboard objectives add hexenkraft.gamemode_timer dummy
+
 scoreboard objectives add hexenkraft.default dummy
 scoreboard players set %mana.regen hexenkraft.default 5
 
@@ -31,7 +33,10 @@ scoreboard players set %max hexenkraft.id 0
 
 scoreboard objectives add hexenkraft.air air
 
+scoreboard objectives add hexenkraft.death deathCount
+
 scoreboard objectives add hexenkraft.settings.toggle_sounds trigger
+
 
 data merge storage hexenkraft:atributes {}
 
