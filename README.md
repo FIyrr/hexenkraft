@@ -22,12 +22,12 @@ As proven by plenty of evidence, some players simply don't read the pack descrip
 To inform those that they need to install the library, please include `execute unless score %installed hexenkraft.util matches 777 run tellraw @a ["",{color:"yellow",text:"["},{color:"#CB81FF",text:"Hexenkraft Library"},{color:"yellow",text:"] "},{color:"red",text:"One of the datapacks you're using requires the "},{color:"#CB81FF",text:"Hexenkraft Mana Library "},{color:"red",text:"to function"},". ",{color:"gray",text:"["},{color:"#AFFFAC",text:"Download",click_event:{action:"open_url",url:"https://modrinth.com/datapack/hexenkraft"},hover_event:{action:"show_text",value:["",{text:"Click to download on Modrinth!"}]}},{color:"gray",text:"]"}]` in your `load` function. Feel free to modify the text to your liking but make sure to include a direct download link in the message.
 
 ### Abilities/Items that use mana:
-To deplete use a set amount of mana run:
+To use a set amount of mana run:
 `function hexenkraft:_public/mana/use {amount:<AMOUNT>}` (e.g. with `execute store result`)
-This will only use mana if the player has enough, in which case the function will return `1`, if the player does **not** have enough mana, the function will return `-1` and give audible feedback to the player. Additionally, the amount of mana needed, will be displayed on the players mana bar!
+This will only use mana if the player has enough, in which case the function will return `1`, if the player does **not** have enough mana, the function will return `-1` and give audible feedback to the player. Additionally, the amount of mana needed, will be highlighted in red on the players mana bar.
 
 ### Items that grant additional mana regen / overflow
-To allow for any item to increase mana regen or overflow, simply add the following to the items `"minecraft:custom_data"` component:
+To allow for any item to increase mana regen or overflow, simply add the following to the item's `"minecraft:custom_data"` component:
 `{hexenkraft:{attributes:{<SLOT TYPE>:true,<MODIFIER TYPE>:true,<MODIFIER TYPE>_amount:<AMOUNT>}}}`
 
 `<SLOT TYPE>`: The slots the item needs to be in for the modifier to activate. Can be any or all of: `armor`, `offhand` or `mainhand`
@@ -37,7 +37,7 @@ To allow for any item to increase mana regen or overflow, simply add the followi
 `<AMOUNT>`: The amount of additional mana to regenerate per second/of overflow mana to be freed. Can be any integer, though overflow mana can not be negative.
 
 ### Grating additional mana regen / overflow without items
-To increase any players mana regen / overflow stats, run `function hexenkraft:_public/attribute/add_modifier {type:<MODIFIER TYPE>,duration:<DURATION>,amount:<AMOUNT>,id:<ID>` as the player
+To increase any players mana regen / overflow stats, run `function hexenkraft:_public/attribute/add_modifier {type:<MODIFIER TYPE>,duration:<DURATION>,amount:<AMOUNT>,id:<ID>,persistent:<PERSITENCE>` as the player
 
 `<MODIFIER TYPE>`: The type of the modifier. Can be either `overflow`, `regen`
 
@@ -47,9 +47,10 @@ To increase any players mana regen / overflow stats, run `function hexenkraft:_p
 
 `<ID>`: Unique ID for the modifier. E.g. `namespace:mana_potion`, `namespace:bossfight_modifier`, etc.
 
+`<PERSISTENCE>`: Boolean. `True` -> modifier automatically gets removed when the player dies. `False` -> Modifier stays even after a player dies
+
 You can remove existing modifiers before they run out using `function hexenkraft:_public/attribute/remove_modifier {id:<ID>}`
 Trying to add multiple modifiers with the same ID to a player will cause the old modifier to be overwritten by the new one
-
 
 ### Reading mana values
 All mana values are stored in scoreboards:

@@ -15,4 +15,4 @@ scoreboard objectives remove hexenkraft.air
 
 tellraw @a ["",{color:"yellow",text:"["},{color:"#CB81FF",text:"Hexenkraft Library"},{color:"yellow",text:"]"}," Uninstalled!"]
 
-datapack disable "file/Hexenkraft Mana Library.zip"
+datapack disable "file/Hexenkraft Mana Library DP.zip"
