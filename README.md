@@ -1,4 +1,5 @@
 **AT THIS POINT IN TIME, THE LIBRARY REQUIRES AN ADDITIONAL RESOURCEPACK. FEEL FREE TO MERGE THE RP WITH YOUR OWN USING WELD, OR TELL USERS TO DOWNLOAD IT FROM HERE OR MODRINTH**
+
 **LINK: https://github.com/FIyrr/hexenkraft-resources**
 
 This datapack library aims to establish a standardised mana/magic system multiple packs can use without breaking each other or getting confusing for the user. 
